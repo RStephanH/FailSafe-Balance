@@ -3,7 +3,7 @@
 gum_installation () {
 
   gum format "🎉Welcome into this installation script for squid🐙"
-  gum spin --spinner='meter' --spinner.foreground="333" --title "Installing squid🐙..." --show-output -- sudo apt install squid-openssl
+  gum spin --spinner='meter' --spinner.foreground="333" --title "Installing squid🐙..." --show-output -- sudo apt install -y squid-openssl
 
 }
 
@@ -12,7 +12,7 @@ install_gum () {
   sudo mkdir -p /etc/apt/keyrings
   curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg
   echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list
-  sudo apt update && sudo apt install gum
+  sudo apt update && sudo apt install gum -y
 
   }
 
